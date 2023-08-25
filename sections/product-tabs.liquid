@@ -1,0 +1,40 @@
+
+<div id="tabs-information" class="col-md-12">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="tab-nav-item">Overview</a></li>
+        <li role="presentation"><a href="#specifications" aria-controls="specifications" role="tab" data-toggle="tab" class="tab-nav-item">Specifications</a></li>
+        <li role="presentation"><a href="#shipping" aria-controls="shipping" role="tab" data-toggle="tab" class="tab-nav-item">Shipping</a></li>
+        <li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab" class="tab-nav-item">FAQ</a></li>
+        <li role="presentation"><a href="#warranty" aria-controls="warranty" role="tab" data-toggle="tab" class="tab-nav-item">Warranty</a></li>
+    </ul>
+</div>
+
+{% assign product_des = product.description | split: '<!-- split -->' %}
+
+<section class="product-tabs">
+    <div class="product-tabs__wrapper">
+        <div id="tabs-information" class="col-md-12 tabs-information__content">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    {{ product_des[0] }}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="specifications">
+                    {{ product_des[1] }}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="shipping">
+                    {{ product_des[2] }}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="faq">
+                   {{ product_des[3] }}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="warranty">
+                   {{ product_des[4] }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ 'products-tabs.css' | asset_url | stylesheet_tag }}
+{% schema %} { "name": "Product-Tabs", "settings": [], "presets": [ { "name" : "Product-Tabs", "category" : "Custom" } ] } {% endschema %} {% stylesheet %} {% endstylesheet %} {% javascript %} {% endjavascript %}

@@ -1,0 +1,64 @@
+<div class="help-second-sec-wrapper">
+    <div class="container">
+      <div class="features-heading">
+      {% if section.settings.description != blank %}
+          <h2>{{ section.settings.description }}</h2>
+      {% endif %}
+      </div>
+      <div class="row features">
+        {% for  block in section.blocks %}
+        <div  style="background-color: #e5f8f4;">
+          <img src={{ block.settings.image  | img_url: 'master'   }} alt="document icon" width="70" height="70">
+          <p>
+            {{ block.settings.heading }}
+          </p> 
+          <a href={{ block.settings.link }}><i class="fa fa-arrow-circle-right" style="text-align: right; transition: all 0.2s ease-in-out;"></i></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+  
+{% schema %}
+  {
+    "name": "Features Section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        } 
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Features Block",   
+        "settings":[
+           {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Features Image"
+        },
+         {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Features Text"
+          },
+           {
+            "type": "text",
+            "id": "link",
+            "label": "Scroll Link"
+          }
+        ]
+      }   
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

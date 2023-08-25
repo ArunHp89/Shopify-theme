@@ -1,0 +1,18 @@
+  <div class="default_pages register-content">
+    <h1 class="main-page-title page-title h0">{{ page_title }}</h1>
+    <hr class="shipping-title-line">
+      <div class="rte">{{ page.content }}</div>
+  {% include 'main-register1' %}
+  </div>
+   {% section 'multicolumn' %}
+
+  <style>
+.register-content .rte {
+    max-width: 750px;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+}
+    
+  </style>
+

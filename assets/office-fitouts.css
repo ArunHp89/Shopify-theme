@@ -1,0 +1,344 @@
+        h1.title.h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+
+            margin: 0.5em auto;
+        }
+
+        p {
+            font-family: "brandon-grotesque";
+            font-size: 23px;
+            line-height: 1.2em;
+            color: #333;
+        }
+
+        .office-fit-sec.office-fit-sec-hero {
+            background: white;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .office-fit-sec-wrapper {
+            max-width: 1040px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .cta {
+            display: flex;
+            flex-flow: row wrap;
+            max-width: 800px;
+            align-items: center;
+            justify-content: space-around;
+            margin: 2em auto 1.5em;
+        }
+
+        h3.title.cta-title {
+            margin: auto;
+            margin-left: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        h2.title.h2 {
+            color: #273347;
+
+            text-transform: initial;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 17.5px !important;
+            line-height: 1.2;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .office-fit-sec-first {
+            min-height: 395px;
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+          display:block !important;
+        }
+
+        .office-fit-sec.office-fit-sec-second.blue-bg {
+            background: #273347;
+        }
+
+        .office-fit-sec.office-fit-sec-second.blue-bg p {
+            color: white;
+        }
+
+        .office-fit-sec.office-fit-sec-second.blue-bg h2 {
+            color: white;
+            text-align: center;
+
+            font-weight: bold;
+            text-transform: initial;
+            font-size: 2.5em;
+        }
+
+        .office-fit-sec.office-fit-sec-second.blue-bg .office-fit-col.office-fit-col-6 {
+            flex: 1 1 48%;
+            margin: 0 auto;
+            width: 48%;
+            min-width: 320px;
+        }
+
+        .office-fit-sec.office-fit-sec-second.blue-bg .row {
+            flex-flow: row wrap;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .office-fit-sec-third {
+            min-height: 395px;
+            background: url("https://cdn.shopify.com/s/files/1/0413/6714/2556/files/office-fit-sec-third-1920.jpg?v=1622105350") no-repeat;
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+        }
+
+        .office-fit-sec.office-fit-sec-fourth.logos .row {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .office-fit-sec.office-fit-sec-fourth.logos .office-fit-col {
+            margin: 5px;
+        }
+
+        .office-fit-sec.office-fit-sec-fourth.logos {
+            background: white;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form {
+            border-bottom: 1px solid #243349;
+            background-color: #f5f5f5;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form input#contactFormName {
+            width: 100%;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form {
+            border-bottom: 1px solid #243349;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper input#contactFormName {
+            width: 100%;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper .row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            margin-top: 10px;
+            align-items: flex-start;
+        }
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper .office-fit-col.office-fit-col-6 {
+            width: 48%;
+            /* margin: auto; */
+            margin: auto;
+            flex: 1 1 44%;
+            display: block;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper .office-fit-col.office-fit-col-6 input {
+            width: 100%;
+        }
+
+        .office-fit-sec.office-fit-sec-eight.aside-form .office-fit-sec-wrapper textarea#contactFormMessage {
+            width: 100%;
+        }
+
+        .btn {
+            margin-top: 25px;
+        }
+
+        a.btn.cta-button {
+            margin: auto;
+        }
+
+        .btn,
+        a.btn.cta-button {
+            padding: 8px 20px;
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 40px;
+            line-height: 40px;
+            border-width: 1px;
+            border-style: solid;
+            font-size: 16px;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            width: auto;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border-radius: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: var(--font-body-family);
+            font-weight: 400;
+            text-transform: uppercase;
+            white-space: normal;
+            color: #fff;
+            border-color: #222;
+            background-color: #222;
+        }
+        .btn:hover,
+        a.btn.cta-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .col-content {
+            padding: 0 5px;
+        }
+
+        .office-fit-sec.office-fit-sec-fourth.logos .office-fit-col {
+            margin: 5px;
+        }
+
+        .pages-bulk-quote .office-fit-sec .office-fit-sec-wrapper {
+            padding: 35px 15px;
+        }
+
+        img.lazy.entered.loaded {
+            max-width: 100%;
+            border: 0;
+        }
+
+        .pages-bulk-quote .office-fit-sec-fifth {
+            background-position: center;
+            height: 800px;
+          background-repeat:no-repeat;
+        }
+
+        .pages-bulk-quote .office-fit-sec-fifth .office-fit-sec-wrapper p,
+        .pages-bulk-quote .office-fit-sec-fifth .office-fit-sec-wrapper h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        .office-fit-sec.office-fit-sec-six {
+            background-color: #f5f5f5;
+          text-align:center;
+        }
+
+        .pages-bulk-quote .office-fit-sec.office-fit-sec-seven {
+            background-color: #fefbee;
+            text-align: center;
+          display:block;
+        }
+.package-item a {
+    text-decoration: unset !important;
+}
+        .pages-bulk-quote .package-items {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .pages-bulk-quote .package-item {
+            display: flex;
+            width: 30%;
+            text-align: center;
+            flex-flow: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .pages-bulk-quote .package-item:hover span.package-item-name {
+            color: #4c6394;
+        }
+
+        .pages-bulk-quote img.package-item-image {
+            max-height: 170px;
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .pages-bulk-quote span.package-item-name {
+            font-weight: 700;
+            color: #243349; 
+          display:block;
+        }
+
+        label {
+            color: #243349;
+            cursor: pointer;
+        }
+
+        input,
+        select,
+        textarea {
+            border: 1px solid #ebebeb;
+            background-color: #fff;
+            color: #243349;
+            max-width: 100%;
+            line-height: 1.2;
+            border-radius: 0;
+        }
+
+        input,
+        textarea {
+            padding: 8px 15px;
+        }
+img {
+    max-width: 100%;
+}
+        @media (min-width: 768px) {
+            input,
+            textarea {
+                padding: 10px 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pages-bulk-quote .package-items {
+                flex-flow: column !important;
+                align-items: center;
+            }
+            .hero-image.text-center img {
+                max-width: 100%;
+                width: 100%;
+            }
+            .office-fit-sec.office-fit-sec-fourth.logos .row {
+                flex-flow: wrap;
+            }
+            .office-fit-sec.office-fit-sec-fourth.logos .row .office-fit-col {
+                max-width: 155px;
+            }
+        }

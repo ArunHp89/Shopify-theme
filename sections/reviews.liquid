@@ -1,0 +1,331 @@
+{%- style -%}
+/*  custom style */
+ .reviews-testimonials-slider {
+    display: flex;
+    flex-direction: row;
+    scroll-behavior: smooth;
+    overflow: auto;
+    overflow-y: hidden;
+    justify-content: space-between;
+     width: 87.5%;
+     margin: 0px  auto;
+}
+  .reviews-section {
+    max-width: 1920px;
+    padding-left: 0;
+    padding-right: 0;
+   
+     margin: 40px  auto;
+    background: transparent !important;
+    
+  }
+.reviews-section-header  h2 {
+    width: 100%;
+    padding: 0 20px;
+    float: left;
+    font-size: 40px;
+    margin: 10px 0 40px;
+    line-height: 1em;
+    text-align: center;
+}
+
+.reviews-testimonials-slider>div {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1em;
+    min-width: 300px;
+    width: 25%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    color: rgb(var(--color-base-text));
+}
+
+.reviews-testimonials-slider>div img {
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+blockquote.reviews-testimonials-slider__text {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+span.reviews-testimonial-stars {
+    font-size: 27px;
+    color: #ffd200;
+} 
+ .reviews-testimonials-slider h3 {
+    font-weight: 700;
+    margin: 10px 0;
+    font-size: 1.6rem;
+     color: #243349;
+}
+  .reviews-rte-setting.text-spacing p {
+    font-size: 14px;
+    margin: 0 0 11px;
+    font-style: normal;
+    color: #243349;
+}
+  .reviews-testimonials__author {
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: 0;
+    font-weight: 700;
+    font-style: normal;
+      color: #243349;
+}
+ .reviews-testimonials-slider::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+ .reviews-testimonials-slider::-webkit-scrollbar {
+    height: 10px;
+    background-color: #f5f5f5;
+}
+   .reviews-testimonials-slider::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+  @media (max-width:767px){
+.reviews-section-header h2 {
+   font-size: 32px;
+}
+    .reviews-section .page-width {
+    padding: 0;
+}
+  }
+/*  custom style end */
+  .testimonials-{{ section.id }} {
+    background-color: {{ section.settings.color_background }};
+    color: {{ section.settings.color_text }};
+}
+{%- endstyle -%}
+
+<div
+  class="reviews-section testimonials-{{ section.id }}{% if section.settings.color_background == settings.color_body_bg %} testimonials-section--with-divider{% endif %} text-{{ section.settings.align_text }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="testimonials"
+  data-aos>
+  {%- if section.settings.title != blank -%}
+    <div class="page-width">
+      <div class="reviews-section-header">
+        <h2 data-aos="fade-down">{{ section.settings.title | escape }}</h2>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div data-aos="fade-up" class="reviews-slideshow-wrapper">
+      <div
+        class="reviews-testimonials-slider"
+        id="Testimonials-{{ section.id }}"
+        data-dots="true"
+        data-count="{{ section.blocks.size }}">
+        {%- for block in section.blocks -%}
+          <div
+            class="reviews-testimonials-slide testimonials-slide--{{ block.id }}"
+            data-index="{{ forloop.index0 }}"
+            data-aos="row-of-{{ section.blocks.size }}"
+            {{ block.shopify_attributes }}>
+            <blockquote class="reviews-testimonials-slider__text">
+
+            {%- if block.settings.image != blank -%}
+                <div class="reviews-testimonail-image{% if section.settings.round_images %} testimonail-image--round{% endif %}">
+                  <img class="lazyloaded" src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
+                </div>
+              {%- endif -%}
+         
+
+              <div class="reviews-testimonial-content">
+                {%  if block.settings.review_title != blank %}
+                <h3>{{ block.settings.review_title }}</h3>
+                {% endif %}
+              {%- if block.settings.testimonial != blank -%}
+                <div class="reviews-rte-setting text-spacing">{{ block.settings.testimonial }}</div>
+              {%- endif -%}
+
+                
+
+              {%- if block.settings.icon == 'quote' -%}
+                <span class="reviews-quote-icon"><svg aria-hidden="true" focusable="false" role="presentation" class="reviews-icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z" fill="#000" fill-rule="evenodd"/></svg></span>
+              {%- elsif block.settings.icon == '5-stars' -%}
+                <span class="reviews-testimonial-stars">★★★★★</span>
+              {%- elsif block.settings.icon == '4-stars' -%}
+                <span class="reviews-testimonial-stars">★★★★</span>
+              {%- elsif block.settings.icon == '3-stars' -%}
+                <span class="reviews-testimonial-stars">★★★</span>
+              {%- elsif block.settings.icon == '2-stars' -%}
+                <span class="reviews-testimonial-stars">★★</span>
+              {%- elsif block.settings.icon == '1-star' -%}
+                <span class="reviews-testimonial-stars">★</span>
+              {%- endif -%}
+                <hr class="short-line">
+              {%- if block.settings.author != blank -%}
+                <div class="reviews-testimonials__author">{{ block.settings.author | escape }}</div>
+              {%- endif -%}
+
+              
+              {%- if block.settings.author_info != blank -%}
+                <div class="reviews-testimonials__info">{{ block.settings.author_info | escape }}</div>
+              {%- endif -%}
+            </div>
+            </blockquote>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+
+{% schema %}
+{
+  "name": "Reviews",
+  "class": "index-section reviews",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Reviews"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "round_images",
+      "label": "Circular images",
+      "info": "Requires square images",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text",
+      "default": "#1c1d1d"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "review",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "5-stars",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "quote",
+              "label": "Quote"
+            },
+            {
+              "value": "5-stars",
+              "label": "5-stars"
+            },
+            {
+              "value": "4-stars",
+              "label": "4-stars"
+            },
+            {
+              "value": "3-stars",
+              "label": "3-stars"
+            },
+            {
+              "value": "2-stars",
+              "label": "2-stars"
+            },
+            {
+              "value": "1-star",
+              "label": "1-stars"
+            }
+          ]
+        },
+        {
+        "type": "text",
+        "id": "review_title",
+        "label": "Review Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial",
+          "label": "Text",
+          "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Author's image"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Author's name"
+        },
+        {
+          "type": "text",
+          "id": "author_info",
+          "label": "Author info",
+          "default": "Los Angeles, CA"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

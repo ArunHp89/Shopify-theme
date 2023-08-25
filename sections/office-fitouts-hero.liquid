@@ -1,0 +1,57 @@
+<div class="office-fit-sec office-fit-sec-hero">
+  <div class="office-fit-sec-wrapper">
+      <h1 class="title h1">{{ section.settings.hero_text }}</h1>
+      <p style="text-align: center;">{{ section.settings.hero_subheading}}</p>
+      <div class="hero-image text-center">
+         <img class="lazy entered loaded" src="{{ section.settings.hero_image | img_url: 'master' }}"  alt="Your office" width="800" height="" />
+      </div>
+      <p>{{ section.settings.hero_description }}</p>
+      <div class="cta">
+          <h3 class="title cta-title">{{ section.settings.cta_text }}</h3>
+          <a class="btn cta-button" href="#aside-form">{{ section.settings.cta_text_btn }}</a>
+      </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Office Fitouts Hero",
+    "settings": [
+        {
+          "type": "text",
+          "id": "hero_text",
+          "label": "Hero Text"
+        },   
+        {
+          "type": "text",
+          "id": "hero_subheading",
+          "label": "Hero Sub Heading"
+        },        
+        {
+          "type": "text",
+          "id": "hero_description",
+          "label": "Hero Description"
+        },       
+        {
+          "type": "image_picker",
+          "id": "hero_image",
+          "label": "Hero Image"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },  
+        {
+          "type": "text",
+          "id": "cta_text_btn",
+          "label": "CTA Button Text"
+        }      
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

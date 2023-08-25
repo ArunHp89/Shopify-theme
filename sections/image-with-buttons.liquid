@@ -1,0 +1,421 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+.section-{{ section.id }}.cst_text_first {
+  background:{{ section.settings.custom_background }};
+}
+  .section-{{ section.id }}.cst_text_first .image-with-buttons__content {
+  background: transparent;
+}
+   .section-{{ section.id }} .image-with-buttons__grid {
+    align-items: center;
+}
+  .image-with-buttons__media {
+    border: 0;
+}
+
+
+/*   custom */
+
+
+@media (max-width: 749px) {
+  .section-{{ section.id }} .image-with-buttons__content {
+    padding: 16px 0;
+  }
+ .section-{{ section.id }}  a.button.button--primary {
+    margin: 0 auto;
+}
+}
+
+/*  custom  */
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="image-with-buttons {{ section.settings.custom_class }} section-{{ section.id }}" style="display:flex">
+   <div class="col-sm-6">
+    <div class="image-with-buttons__text-item">
+      <div id="ImageWithButton--{{ section.id }}" class="image-with-buttons__content image-with-buttons__content--mobile-{{ section.settings.mobile_content_alignment }}  gradient color-{{ section.settings.color_scheme }} content-container">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'heading' -%}
+              <h2
+                class="image-with-buttons__heading inline-richtext {{ block.settings.heading_size }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.heading }}
+              </h2>
+               {%- if block.settings.img != blank -%}
+				<img class="image-with-buttons-img" src="{{ block.settings.img | img_url:'master' }}" width="310" height="43" {{ block.shopify_attributes }}>
+               {% endif %}
+               {%- if block.settings.subheading != blank -%}
+				<p class="image-with-buttons__subheading inline-richtext"{{ block.shopify_attributes }}><small>{{ block.settings.subheading }}</small></p>
+                {% endif %}
+            {%- when 'caption' -%}
+              <p
+                class="image-with-buttons__text image-with-buttons__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.caption | escape }}
+              </p>
+            {%- when 'text' -%}
+              <div class="image-with-buttons__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {%- when 'button' -%}
+                <div class="image-with-buttons pro-option">
+                  {%- if block.settings.button_label1 != blank -%}
+                    <div class="pro-options-1" style="display:flex">
+                		{% if block.settings.pro_img1 != blank %}
+                		  <img class="pro-option-image1" src="{{ block.settings.pro_img1 | img_url:'master' }}" width="281" height="80"> 
+                		 {% endif %}
+                         {% if block.settings.button_link1 == blank %}
+                			<a {% if block.settings.button_link1 == blank %}
+                			role="link" aria-disabled="true"
+                			{% else %}
+                			  href="{{ block.settings.button_link1 }}"
+                			{% endif %}
+                			  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
+                                <span> {{ block.settings.button_label1 | escape }}</span>
+                            </a>
+                           {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.button_label2 != blank %}
+                     <div class="pro-options-2" style="display:flex">
+                		{% if block.settings.pro_img2 != blank %}
+                		  <img class="pro-option-image2" src="{{ block.settings.pro_img2 | img_url:'master' }}" width="281" height="80"> 
+                		 {% endif %}
+                         {% if block.settings.button_link2 == blank %}
+                			<a {% if block.settings.button_link2 == blank %}
+                			role="link" aria-disabled="true"
+                			{% else %}
+                			  href="{{ block.settings.button_link2 }}"
+                			{% endif %}
+                			  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
+                                <span> {{ block.settings.button_label2 | escape }}</span>
+                            </a>
+                           {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.button_label3 != blank %}
+                    <div class="pro-options-3" style="display:flex">
+                		{% if block.settings.pro_img3 != blank %}
+                		  <img class="pro-option-image3" src="{{ block.settings.pro_img3 | img_url:'master' }}" width="281" height="80"> 
+                		 {% endif %}
+                         {% if block.settings.button_link3 == blank %}
+                			<a {% if block.settings.button_link3 == blank %}
+                			role="link" aria-disabled="true"
+                			{% else %}
+                			  href="{{ block.settings.button_link3 }}"
+                			{% endif %}
+                			  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
+                                <span> {{ block.settings.button_label3 | escape }}</span>
+                            </a>
+                           {% endif %}
+                    </div>
+              {% endif %}
+                </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+    <div class="col-sm-6">
+      <div class="image-with-buttons__media">
+        {%- if section.settings.image != blank -%}
+          <img class="image-with-buttons-main-image" src="{{ section.settings.image | img_url:master }}" width="400" height="450">
+          {%- endif -%}
+       </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with button",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Add custom class"
+    },
+    {
+      "id": "custom_class",
+      "type": "text",
+      "label": "custom class"
+    },
+    {
+      "type": "header",
+      "content": "Add custom background color"
+    },
+    {
+      "id": "custom_background",
+      "type": "color",
+      "default": "#fff",
+      "label": "custom background"
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Mobile content alignment"
+    },
+    {
+      "type": "header",
+      "content": "SECTION PADDING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Headings with image",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Image Heading",
+          "label": "Heading"
+        },
+                {
+          "type": "inline_richtext",
+          "id": "subheading",
+          "default": "Image with sub-text",
+          "label": "Subheading"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Small Image"
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "Caption",
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "default": "Add a tagline",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "subtitle",
+              "label": "subtitle"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "Uppercase"
+            }
+          ],
+          "default": "caption-with-letter-spacing",
+          "label": "Text style"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ],
+          "default": "medium",
+          "label": "Text size"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Content"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            }
+          ],
+          "default": "body",
+          "label": "Text style"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Buttons",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pro_img1",
+          "label": "Image-1"
+        },
+        {
+          "type": "text",
+          "id": "button_label1",
+          "label": "Button label 1",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link1",
+          "label": "Button link 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "pro_img2",
+          "label": "Image-2"
+        },
+        {
+          "type": "text",
+          "id": "button_label2",
+          "label": "Button label 2",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link2",
+          "label": "Button link 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "pro_img3",
+          "label": "Image-3"
+        },
+         {
+          "type": "text",
+          "id": "button_label3",
+          "label": "Button label 3",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link3",
+          "label": "Button link 3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with buttons",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

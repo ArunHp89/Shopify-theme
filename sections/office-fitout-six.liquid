@@ -1,0 +1,37 @@
+<div class="office-fit-sec office-fit-sec-six">
+<div class="office-fit-sec-wrapper">
+    <h2 class="title h2 text-center">{{ section.settings.heading }}</h2>
+    <div class="img-container text-center" style="width: 100%;">
+        <img
+            src="{{ section.settings.fitout_image | img_url: 'master' }}"
+            alt=""
+            class="text-center lazy entered loaded"
+            width="800"
+            height=""
+        />
+    </div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Office Fitout Six",
+    "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "fitout_image",
+          "label": "Image"
+        }      
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

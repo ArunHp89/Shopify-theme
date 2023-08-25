@@ -1,0 +1,50 @@
+<div class="container">
+      <div class="row help-1st-sec-wrapped-wrapper">
+        <div class="help-image-left">
+          <img class="lazy entered loaded"
+            alt="" width="100%" height="auto"
+            src={{ section.settings.leftimage | img_url: 'master'  }}>
+        </div>
+        <div class="help-image-right">
+          <img class="lazy entered loaded" 
+            alt="" width="100%" height="auto" 
+            src= {{ section.settings.rightimage | img_url: 'master'  }}></div>
+        <div class="help-1st-sec-heading">
+            <h1>{{ section.settings.text }}</h1>       
+            <h3>{{ section.settings.subheading }}</h3> 
+        </div>
+    </div>
+  </div>
+{% schema %}
+  {
+    "name": "Help Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Heading"
+      },
+         {
+        "type": "text",
+        "id": "subheading",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "leftimage",
+        "label": "Left Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "rightimage",
+        "label": "Right Image"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

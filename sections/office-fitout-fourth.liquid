@@ -1,0 +1,52 @@
+<div class="office-fit-sec office-fit-sec-fourth logos">
+    <div class="office-fit-sec-wrapper">
+        <h2 class="title h2 text-center">{{ section.settings.heading }}</h2>
+        <div class="row">
+          {% for block in section.blocks %}
+            <div class="office-fit-col">
+                <a href="{{ block.settings.brand_url }}">
+                    <img width="220" height="" src="{{ block.settings.brand_logo | img_url: 'master' }}"
+                    />
+                </a>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Office Fitout Fourth",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Brands",   
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "brand_logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "brand_url",
+            "label": "Url"
+          }          
+        ]
+      }   
+    ],    
+    "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        } 
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

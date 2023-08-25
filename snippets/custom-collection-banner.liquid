@@ -1,0 +1,185 @@
+{% if collection.metafields.custom.collection_banner_image and collection.metafields.custom.collection_banner_heading and collection.metafields.custom.collection_banner_sub_heading %}
+<div class="collection-banner-wrapper height-cst-workland" style="background-color: #ebebed;">
+    <div class="container">
+      <div class="row template-collection-wrapper">
+        <div class="col-sm-6 collection-banner-img" style="background-image:url({{ collection.metafields.custom.collection_banner_image | img_url: 'master' }})">
+        </div>
+        <div class="col-sm-6">
+          <div id="collection-banner__more-content" class="collection-banner-html banner-text-style">
+            <h2>{{ collection.metafields.custom.collection_banner_heading }}</h2>
+              <p><strong>{{ collection.metafields.custom.collection_banner_sub_heading }}</strong></p></div>
+          <a href="#" id="collection-banner-read-more" class="collection-banner-read-more  read-more__inactive" style="background: linear-gradient(180deg,rgba(255,255,255,0),#ebebed 1.38em);">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+<style>
+  .banner-text-style {
+    line-height: 1.3;
+}
+.collection-banner-html {
+    text-align: center;
+    padding: 15px 30px;
+    overflow: hidden;
+    max-height: 19rem;
+}
+#shopify-section-collection-template .collection-banner-wrapper .collection-banner-html .h2,
+#shopify-section-collection-template .collection-banner-wrapper .collection-banner-html h2 {
+    line-height: 36px;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+a.collection-banner-read-more {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto auto;
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    font-weight: 700;
+    padding: 20px 0;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(1.38em, #f8f8f8));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), #dbd9d8 1.38em);
+}
+.read-more__inactive {
+    padding: 28px 0 !important;
+}
+.read-more__active {
+    position: relative !important;
+    padding: 0 0 20px !important;
+}
+.content-more_active {
+    max-height: 100% !important;
+}
+.col-sm-6.collection-banner-img {
+    position: relative;
+}
+.col-sm-6.collection-banner-img {
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 248px;
+    align-items: center;
+    display: flex;
+}
+.col-sm-6.collection-banner-img {
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 248px;
+    align-items: center;
+    display: flex;
+    float: left;
+    position: relative;
+    padding-right: 15px;
+}
+.collection-banner-wrapper .container div {
+    float: left;
+    line-height: 1.2em;
+}
+.collection-banner-wrapper {
+    display: flex;
+}
+.row.template-collection-wrapper {
+    width: 100%;
+}
+.breadcrumb-group {
+    text-transform: capitalize;
+}
+.col-sm-12,
+.col-sm-3,
+.col-sm-6 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-sm-6 {
+    width: 50%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.collection-banner-wrapper.height-cst-workland .row.template-collection-wrapper {
+    display: flex;
+    align-items: center;
+}
+div#collection-banner__more-content  p,
+div#collection-banner__more-content p * {
+    font-size: 16px;
+    font-family: 'museo-sans';
+    font-weight: 400 !important;
+}
+  @media (min-width: 768px) {
+    div#collection-banner__more-content h2 {
+    font-size: 31px;
+}
+  }
+@media (max-width: 768px) {
+      div#collection-banner__more-content h2 {
+    font-size: 20px;
+}
+    .col-sm-6 {
+        width: 90vw;
+        margin: auto;
+        text-align: center;
+    }
+    .collection-faq .faq-wrapper .collection-title {
+        margin-left: 5vw;
+    }
+    .collection-banner-wrapper.height-cst-workland .container,
+    .collection-banner-wrapper.height-cst-workland .col-sm-6.collection-banner-img {
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .template-collection-wrapper {
+        flex-direction: column;
+    }
+    .col-sm-6.collection-banner-img img {
+        position: relative;
+    }
+    .col-sm-6.collection-banner-img {
+        min-height: 28vw !important;
+    }
+    .collection-banner-html {
+        padding: 0;
+    }
+}
+.collection-swatch-wrap {
+    display: none !important;
+}
+.swatches-globo--list {
+    overflow: hidden;
+}
+.swatches-globo .swatch--gl li.swatches-more label:not(.globo-style--button) {
+    font-size: 12px !important;
+    text-align: center !important;
+    font-family: museo-sans, sans-serif !important;
+    line-height: 23px !important;
+}
+</style>
+<script defer="" type="text/javascript">
+  var mainBannerEl = document.getElementById("collection-banner-read-more"); 
+  var contentBanneer = document.getElementById("collection-banner__more-content"); 
+  mainBannerEl.addEventListener('click', function() { 
+    if (mainBannerEl.classList.contains('read-more__inactive')) {
+      mainBannerEl.classList.remove('read-more__inactive');
+      mainBannerEl.classList.add('read-more__active');
+      mainBannerEl.textContent = "Read less";
+      contentBanneer.classList.add('content-more_active');
+
+    } else if (mainBannerEl.classList.contains('read-more__active')) {
+      mainBannerEl.classList.remove('read-more__active');
+      mainBannerEl.classList.add('read-more__inactive');
+      mainBannerEl.textContent = "Read more";
+      contentBanneer.classList.remove('content-more_active');
+      
+    }
+  });  
+</script>

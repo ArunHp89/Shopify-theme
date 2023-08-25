@@ -1,0 +1,171 @@
+<div class="help_container">
+      {% assign faqss1 = page.metafields.custom.faq_1.value.faqInfo %}
+      {% assign faqss2 = page.metafields.custom.faq_2.value.faqInfo %}
+      {% assign faqss3 = page.metafields.custom.faq_3.value.faqInfo %}
+      {% assign faqss4 = page.metafields.custom.faq_4.value.faqInfo %}
+      {% assign faqss5 = page.metafields.custom.faq_5.value.faqInfo %}
+      {% assign faqss6 = page.metafields.custom.faq_6.value.faqInfo %}
+
+  
+  <div class="container" itemscope="" itemtype="http://schema.org/FAQPage">  
+    {% if page.metafields.custom.faq_1.value.faqInfo %}
+    <div id="before-buy" class="help">
+        <div class="help-category">
+            <h2>{{ faqss1[0].heading }}</h2>
+        </div>
+        <div class="help-question-answer-wrapper">  
+           {% for faqss1 in page.metafields.custom.faq_1.value.faqInfo %}
+            <div class="help-question-answer" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+              <div class="help_question" itemprop="name">{{ faqss1.question }}<i class="fa fa-arrow-right" style="text-align: right;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></path</svg></i></div>
+              <div class="help_answer_container" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
+                <div class="help_answer" itemprop="text">
+                  <p>{{ faqss1.answer }}</p>
+                </div>
+              </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+  {% endif %}
+
+  {% if page.metafields.custom.faq_2.value.faqInfo %}
+        <div id="before-buy" class="help">
+        <div class="help-category">
+            <h2>{{ faqss2[0].heading }}</h2>
+        </div>
+        <div class="help-question-answer-wrapper">  
+           {% for faqss2 in page.metafields.custom.faq_2.value.faqInfo %}
+            <div class="help-question-answer" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+              <div class="help_question" itemprop="name">{{ faqss2.question }}<i class="fa fa-arrow-right" style="text-align: right;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></path</svg></i></div>
+              <div class="help_answer_container" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
+                <div class="help_answer" itemprop="text">
+                  <p>{{ faqss2.answer }}</p>
+                </div>
+              </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+  {% endif %}
+
+    {% if page.metafields.custom.faq_3.value.faqInfo %}
+        <div id="before-buy" class="help">
+        <div class="help-category">
+            <h2>{{ faqss3[0].heading }}</h2>
+        </div>
+        <div class="help-question-answer-wrapper">  
+           {% for faqss3 in page.metafields.custom.faq_3.value.faqInfo %}
+            <div class="help-question-answer" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+              <div class="help_question" itemprop="name">{{ faqss3.question }}<i class="fa fa-arrow-right" style="text-align: right;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></path</svg></i></div>
+              <div class="help_answer_container" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
+                <div class="help_answer" itemprop="text">
+                  <p>{{ faqss3.answer }}</p>
+                </div>
+              </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+  {% endif %}
+
+    {% if page.metafields.custom.faq_4.value.faqInfo %}
+        <div id="before-buy" class="help">
+        <div class="help-category">
+            <h2>{{ faqss4[0].heading }}</h2>
+        </div>
+        <div class="help-question-answer-wrapper">  
+           {% for faqss4 in page.metafields.custom.faq_4.value.faqInfo %}
+            <div class="help-question-answer" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+              <div class="help_question" itemprop="name">{{ faqss4.question }}<i class="fa fa-arrow-right" style="text-align: right;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></path</svg></i></div>
+              <div class="help_answer_container" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
+                <div class="help_answer" itemprop="text">
+                  <p>{{ faqss4.answer }}</p>
+                </div>
+              </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+      {% endif %}
+
+    {% if page.metafields.custom.faq_5.value.faqInfo %}
+        <div id="before-buy" class="help">
+        <div class="help-category">
+            <h2>{{ faqss5[0].heading }}</h2>
+        </div>
+        <div class="help-question-answer-wrapper">  
+           {% for faqss5 in page.metafields.custom.faq_5.value.faqInfo %}
+            <div class="help-question-answer" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+              <div class="help_question" itemprop="name">{{ faqss5.question }}<i class="fa fa-arrow-right" style="text-align: right;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></path</svg></i></div>
+              <div class="help_answer_container" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
+                <div class="help_answer" itemprop="text">
+                  <p>{{ faqss5.answer }}</p>
+                </div>
+              </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+  {% endif %}
+
+    {% if page.metafields.custom.faq_6.value.faqInfo %}
+        <div id="before-buy" class="help">
+        <div class="help-category">
+            <h2>{{ faqss6[0].heading }}</h2>
+        </div>
+        <div class="help-question-answer-wrapper">  
+           {% for faqss6 in page.metafields.custom.faq_6.value.faqInfo %}
+            <div class="help-question-answer" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+              <div class="help_question" itemprop="name">{{ faqss6.question }}<i class="fa fa-arrow-right" style="text-align: right;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></path</svg></i></div>
+              <div class="help_answer_container" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
+                <div class="help_answer" itemprop="text">
+                  <p>{{ faqss6.answer }}</p>
+                </div>
+              </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+      {% endif %}
+  </div>
+</div>
+
+
+  
+{% schema %}
+  {
+    "name": "Help Faq Section",
+    "settings": [
+     {
+       "id": "faq-title",
+       "type": "text",
+       "label": "FAQ Title"
+     }
+   ],
+   "blocks":[
+     {
+       "type": "block",
+       "name": "Block",
+       "settings": [
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+         }
+       ]
+     }
+   ],
+   "presets": [
+   {
+     "category": "Text",
+     "name": "Top Bar"
+   }
+ ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

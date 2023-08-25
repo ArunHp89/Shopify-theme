@@ -1,0 +1,22 @@
+<link type="text/css" href="{{ 'help-page.css' | asset_url }}" rel="stylesheet">
+
+<div class="help-page-wrapper">
+  <div class="help-help-1st-sec-wrapper">
+  {% section 'help-hero' %}
+  {% section 'help-second' %}
+  {% section 'help-third' %}
+  {% section 'multicolumn' %}
+</div>
+<script defer="" type="text/javascript"> 
+  var hideQuestion = document.getElementsByClassName("help-question-answer");
+  for(var x = 0; x < hideQuestion.length; x++) {
+    hideQuestion[x].addEventListener("click",function(){
+      if (this.classList.contains('active')) {
+        this.classList.remove('active')
+      } else {
+        this.classList.add('active');
+      }
+    });
+  }
+</script>
+</div>
